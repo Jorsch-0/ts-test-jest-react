@@ -1,36 +1,36 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 type ChildProps = {
-  parentCounter: number;
-};
+  parentCounter: number
+}
 
 function ChildCounter(props: ChildProps) {
-  const [childCounter, setChildCounter] = useState<number>(0);
+  const [childCounter, setChildCounter] = useState<number>(0)
   function handleClickIncrement() {
-    setChildCounter(childCounter + 1);
+    setChildCounter(childCounter + 1)
   }
-  console.log("Rendering child component");
+  console.log('Rendering child component')
   return (
-    <div style={{ border: "1px dashed red" }}>
+    <div style={{ border: '1px dashed red' }}>
       <button onClick={handleClickIncrement}>Increment child counter</button>
       <p>ChildCounter: {childCounter}</p>
       <p>ParentCounter: {props.parentCounter}</p>
     </div>
-  );
+  )
 }
 
 function ParentCounter() {
-  const [parentCounter, setParentCounter] = useState<number>(0);
+  const [parentCounter, setParentCounter] = useState<number>(0)
   function handleClickIncrement() {
-    setParentCounter(parentCounter + 1);
+    setParentCounter(parentCounter + 1)
   }
-  console.log("Rendering parent component");
+  console.log('Rendering parent component')
   return (
-    <div style={{ border: "1px dashed blue" }}>
+    <div style={{ border: '1px dashed blue' }}>
       <button onClick={handleClickIncrement}>Increment parent counter</button>
       <ChildCounter parentCounter={parentCounter} />
     </div>
-  );
+  )
 }
 
 function App2() {
@@ -40,7 +40,7 @@ function App2() {
       <br />
       <ParentCounter />
     </div>
-  );
+  )
 }
 
-export default App2;
+export default App2
